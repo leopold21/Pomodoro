@@ -11,25 +11,47 @@
 
     <script src="https://kit.fontawesome.com/40622e83b7.js" crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+
     <title>Pomodoro timer</title>
 </head>
 
 <body>
-    <h1>TIMER POMODORO</h1>
+    <h1 class="title text-font">TIMER POMODORO</h1>
 
-    <div class="big-circle">
-        <div class="little-circle">
-            <div id="timer"></div>
-
-            <div class="icon-container">
-                <i id="boolRun" class="fa-solid fa-play play-button fa-2xl"></i>
-                <i id="boolPause" class="fa-solid fa-pause pause-button fa-2xl "></i>
-                <i id="boolStop" class="fa-solid fa-stop stop-button fa-2xl "></i>
-            </div>
-            
-        </div>
+    <div class="type-of-time text-font">
+        <p id="working" class="working">Travail</p>
+        <p>|</p>
+        <p id="rest" class="working">Pause</p>
     </div>
 
+    <div class="image-center">
+
+        <div class="big-circle">
+            <div class="little-circle">
+                <div class="time">
+                    <div class="" id="timer">25:00</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="icon-container button">
+
+        <span id="boolRun" class="fa-stack small play-button">
+            <i class="fa-regular fa-circle fa-stack-2x red-circle "></i>
+            <i class="fa-solid fa-play start-logo fa-l fa-stack-1x"></i>
+        </span>
+
+        <i id="boolPause" class="fa-solid fa-pause pause-button fa-2xl "></i>
+        <i id="boolStop" class="fa-solid fa-stop stop-button fa-2xl "></i>
+    </div>
 
 
 </body>

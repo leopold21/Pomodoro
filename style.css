@@ -1,62 +1,184 @@
-.play-button, .stop-button, .start-again-button, .pause-button{
-    vertical-align: top;
-}
-
 body {
     color: white;
-    background-color: rgba(199,1,26,255);
+    background-color: rgba(199, 1, 26, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+}
+
+.text-font{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal
+}
+
+.play-button,
+.stop-button,
+.pause-button {
+    vertical-align: top;
+}
+
+.fa-stack.small {
+    font-size: 0.85em;
+}
+
+.start-logo {
+    padding-left: 0.08em;
 }
 
 
 #timer {
     font-size: 2em;
-    margin-bottom: 20px; /* Ajuste cet espace selon ton besoin*/ 
+    /*margin-bottom: 20px; */
+    /* Ajuste cet espace selon ton besoin*/
 }
 
 .icon-container {
     display: flex;
     align-items: center;
-    gap: 1.5em; /* Espacement entre les icônes, ajuste si nécessaire */
-    border-radius: 50em;
+    gap: 1.5em;
+    /* Espacement entre les icônes, ajuste si nécessaire */
+    /*border-radius: 50em;*/
 }
 
 
 .play-button,
 .pause-button,
-.stop-button,
-.start-again-button {
+.stop-button{
     cursor: pointer;
     transition: transform 0.2s;
 }
 
 .play-button:hover,
 .pause-button:hover,
-.stop-button:hover,
-.start-again-button:hover {
-    transform: scale(1.1); /*Effet d'agrandissement au survol (optionnel) */
+.stop-button:hover{
+    transform: scale(1.1);
+    /*Effet d'agrandissement au survol (optionnel) */
 }
 
 
-.big-circle{
+.big-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*
+    text-align: center;
+    position: relative;
+    */
     height: 30em;
     width: 30em;
-    background-color: aliceblue;
+    background-color: rgba(199, 1, 26, 255);
     border-radius: 50%;
-    box-shadow: 3em 3em 3em rgb(0, 0, 0);;
+    /*
+    border: 0.25em solid;
+    border-color: black;
+    */
+    box-shadow: 0 0em 1em rgb(0, 0, 0);
 }
 
-.little-circle{
-    align-content: middle;
-    vertical-align: middle;
+/*
+.big-circle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 25%;
+    height: 25%;
+    background-color: black;
+    transform: translate(-50%);
+}
+*/
+
+.little-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     height: 27em;
     width: 27em;
-    background-color: rgba(200,232,181,255);
+    background-color: #00000000;
+    border: 0.4em solid;
+    border-color: rgba(200, 232, 181, 255);
     border-radius: 50%;
+}
+
+.time {
+    font-size: 4em;
+    
+    text-align: center;
+}
+
+.button {
+    margin: 2em;
+    font-size: 3em;
+}
+
+.title {
+    font-size: 3em;
+    padding-top: 1em;
+    margin: 1.5em;
+}
+
+
+
+.type-of-time{
+    text-align: center;
+    border-radius: 1em;
+    box-shadow: 0 0 1em rgb(0, 0, 0);
+    width: 20%;
+    margin-bottom: 2em;
+}
+
+
+
+.type-of-time, p{
+    display: inline;
+    font-size: 1em;
+    padding: 1.25em;
+}
+
+.working, 
+.rest{
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.working:hover,
+.rest:hover{
+    transform: scale(5.1);
+}
+
+.time-texte{
+    color: rgba(200,232,181,255);
+}
+
+
+/*<ol class="list">
+            <li>Travail</li>
+            <li>Pause</li>
+        </ol>*/
+
+/*
+.type-of-time,
+ol {
+    list-style-type: none;
+}
+
+.type-of-time,
+li {
+    display: inline;
+    font-size: 1.25em;
+    padding-left: 1em;
+}
+
+.list {
+    border: 0.1em solid;
+    border-collapse: collapse;
+}*/
+
+.image-center {
+    margin: 2em;
 }

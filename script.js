@@ -2,12 +2,15 @@ let timerElement = document.getElementById("timer")
 let runElement = document.getElementById("boolRun")
 let stopElement = document.getElementById("boolStop")
 let pauseElement = document.getElementById("boolPause")
-// let startAgainElement = document.getElementById("boolStartAgain")
+let workType = document.getElementById("working")
+let restType = document.getElementById("rest")
 
 let time = 25
 
 let timeSecondes = 0
 let timeMinutes = time
+
+let working = false
 
 let timer
 
@@ -15,7 +18,6 @@ let running = false
 
 stopElement.style.display = "none"
 pauseElement.style.display = "none"
-//startAgainElement.style.display = "none"
 
 function decreaseTime(){
     if(timeSecondes <= 0){
@@ -67,3 +69,9 @@ stopElement.addEventListener("click", ()=>{
     clearInterval(timer)
 })
 
+
+if(working){
+    restType.classList.toggle("time-text")
+}else{
+    workType.classList.toggle("time-text")
+}
