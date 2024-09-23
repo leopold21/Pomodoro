@@ -1,0 +1,62 @@
+.play-button, .stop-button, .start-again-button, .pause-button{
+    vertical-align: top;
+}
+
+body {
+    color: white;
+    background-color: rgba(199,1,26,255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+#timer {
+    font-size: 2em;
+    margin-bottom: 20px; /* Ajuste cet espace selon ton besoin*/ 
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5em; /* Espacement entre les icônes, ajuste si nécessaire */
+    border-radius: 50em;
+}
+
+
+.play-button,
+.pause-button,
+.stop-button,
+.start-again-button {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.play-button:hover,
+.pause-button:hover,
+.stop-button:hover,
+.start-again-button:hover {
+    transform: scale(1.1); /*Effet d'agrandissement au survol (optionnel) */
+}
+
+
+.big-circle{
+    height: 30em;
+    width: 30em;
+    background-color: aliceblue;
+    border-radius: 50%;
+    box-shadow: 3em 3em 3em rgb(0, 0, 0);;
+}
+
+.little-circle{
+    align-content: middle;
+    vertical-align: middle;
+    height: 27em;
+    width: 27em;
+    background-color: rgba(200,232,181,255);
+    border-radius: 50%;
+}
