@@ -53,6 +53,37 @@
         <i id="boolStop" class="fa-solid fa-stop stop-button fa-2xl "></i>
     </div>
 
+    <i class="fa-solid fa-gear" onclick="modifiyTime()"> </i>
+    <div id="modifiyTime">
+        <div class="herder">
+            <h2> temps </h2>
+        </div>
+        <section class="formSection">
+
+            <form id="form" class="form">
+                <div class="workingTime">
+                    <label>temps de travail:</label>
+                    <input type="text" id="workMinute">
+                    <p>minute(s)</p>
+                    <input type="text" id="workSecond">
+                    <p>seconde(s)</p>
+                </div>
+                <div class="breakTime">
+                    <label>temps de repos:</label>
+                    <input type="text" id="breakMinute">
+                    <p>minute(s)</p>
+                    <input type="text" id="breakSecond">
+                    <p>seconde(s)</p>
+                </div>
+                <div>
+                    <label> Nombre(s) de répétition</label>
+                    <input type="text" id="repetion">
+                </div>
+                <button type="button" onclick="validateTime()"> Valider </button>
+            </form>
+        </section>
+    </div>
+
 
 </body>
 
