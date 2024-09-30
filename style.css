@@ -182,3 +182,20 @@ li {
 .image-center {
     margin: 2em;
 }
+
+.workingTime {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.breakTime {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.formSection{
+    display: block;
+    background: lightgray;
+}
