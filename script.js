@@ -135,12 +135,23 @@ function reset() {
 // Fonction pour afficher ou masquer la section de modification de temps
 function modifiyTime() {
     setting.style.display = (setting.style.display === "none") ? "block" : "none"
+    /*
+    document.getElementById("workMinute").value = setMinutes(localStorage.getItem("timeInitialProgress"))
+    document.getElementById("breakMinute").value = setMinutes(localStorage.getItem("timeInitialProgress"))
+    */
 }
 
 // Fonction pour valider les nouveaux temps de travail et de pause
 function validateTime() {
     let workMinuteElement = parseInt(document.getElementById("workMinute").value)
     let breakMinuteElement = parseInt(document.getElementById("breakMinute").value)
+    
+    if(workMinuteElement <= 0 || workMinuteElement == null || isNaN(workMinuteElement)){
+        workMinuteElement = 25
+    }
+    if(breakMinuteElement <= 0 || breakMinuteElement == null || isNaN(breakMinuteElement)){
+        breakMinuteElement = 5
+    }
 
     timeLocalStorage = workMinuteElement * 60
     timeInProgress = timeLocalStorage
