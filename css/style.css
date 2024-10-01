@@ -347,6 +347,12 @@ body {
         top: 7.57em;
         left: 0.5em;
     }
+
+    .close-button {
+        position: absolute;
+        top: 1em;
+        right: 0.5em;
+    }
 }
 
 /* -------- Très petits écrans (≤ 350px) -------- */
@@ -422,12 +428,7 @@ body {
     .close-button {
         position: absolute;
         top: 1em;
-        right: 1em;
+        right: 0.5em;
     }
 
-    .check-button {
-        position: absolute;
-        bottom: 1em;
-        right: 1em;
-    }
 }
