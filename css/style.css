@@ -10,7 +10,9 @@ body {
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
     font-style: normal
-}/*
+}
+
+/*
 .text-font{
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
@@ -56,7 +58,7 @@ body {
 .stop-button,
 .close-button,
 .settings-button,
-.check-button{
+.check-button {
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -66,13 +68,13 @@ body {
 .stop-button:hover,
 .close-button:hover,
 .settings-button:hover,
-.check-button:hover{
+.check-button:hover {
     transform: scale(1.1);
     /*Effet d'agrandissement au survol (optionnel) */
 }
 
 .check-button:hover,
-.close-button:hover{
+.close-button:hover {
     color: white;
 }
 
@@ -116,7 +118,7 @@ body {
     margin: 1.5em;
 }
 
-.type-of-time{
+.type-of-time {
     text-align: center;
     border-radius: 1em;
     box-shadow: 0 0 1em rgb(0, 0, 0);
@@ -124,33 +126,35 @@ body {
     margin-bottom: 2em;
 }
 
-.type-of-time, p{
+.type-of-time,
+p {
     display: inline;
     font-size: 1em;
     padding: 1.25em;
-} 
+}
 
-.time-text{
-    color: rgba(200,232,181,255);
+.time-text {
+    color: rgba(200, 232, 181, 255);
 }
 
 .image-center {
     margin: 2em;
 }
-.formSection{
+
+.formSection {
     display: block;
     background: lightgray;
 }
 
 
-.workingTime{
+.workingTime {
     margin-bottom: 1em;
 }
 
 
 #modifiyTime {
     width: 35%;
-    height: 20%;
+    height: 30%;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -160,19 +164,22 @@ body {
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
     z-index: 10;
     /*background-color: rgba(255, 255, 255, 0.452); /* Couleur normale du fond */
-    background-color: rgba(199, 1, 26, 100 ); /* Couleur normale du fond */
-    color: black; /* Couleur normale du texte */
+    background-color: rgba(199, 1, 26, 100);
+    /* Couleur normale du fond */
+    color: black;
+    /* Couleur normale du texte */
 }
 
 .breakTime,
-.restTime{
+.restTime {
     display: inline;
     align-items: center;
 }
 
 .formSection {
     /*display: block;*/
-    background: none; /* Enlever la couleur pleine, on la gère dans #modifiyTime */
+    background: none;
+    /* Enlever la couleur pleine, on la gère dans #modifiyTime */
 }
 
 #modifiyTime h2 {
@@ -181,7 +188,8 @@ body {
 }
 
 body {
-    position: relative; /* Nécessaire pour que #modifiyTime se superpose correctement */
+    position: relative;
+    /* Nécessaire pour que #modifiyTime se superpose correctement */
 }
 
 /* Si on veut que l'interaction avec le timer soit bloquée quand le formulaire est ouvert, on pourrait ajouter ceci :*/
@@ -194,7 +202,8 @@ body {
 .error-message {
     color: red;
     font-size: 0.9em;
-    display: none; /* Cacher le message d'erreur par défaut */
+    display: none;
+    /* Cacher le message d'erreur par défaut */
     margin-top: 0.5em;
 }
 
@@ -202,7 +211,9 @@ body {
 
 /* -------- Tablettes (481px - 805px) -------- */
 @media screen and (max-width: 805px) {
-    .title , h2{
+
+    .title,
+    h2 {
         font-size: 2em;
     }
 
@@ -222,7 +233,7 @@ body {
 
     #modifiyTime {
         width: 75%;
-        height:30%;
+        height: 30%;
         padding: 1.5em;
         border-radius: 1.5em;
     }
@@ -236,7 +247,9 @@ body {
         font-size: 0.9em;
     }
 
-    button, .check-button, .close-button {
+    button,
+    .check-button,
+    .close-button {
         font-size: 1.5em;
     }
 
@@ -244,30 +257,33 @@ body {
         gap: 0.8em;
     }
 
-    .type-of-time{
+    .type-of-time {
         width: 50%;
     }
 
-    .type-of-time, p{
+    .type-of-time,
+    p {
         display: inline;
         font-size: 1em;
         padding: 1.25em;
-    } 
-
-    label{
-        font-size:0.7em;
     }
 
-    .settings-button{
+    label {
+        font-size: 0.7em;
+    }
+
+    .settings-button {
         position: absolute;
-        top:7.57em;
-        left:0.5em;
+        top: 7.57em;
+        left: 0.5em;
     }
 }
 
 /* -------- Petits Écrans (351px - 480px) -------- */
 @media screen and (max-width: 480px) {
-    .title , h2{
+
+    .title,
+    h2 {
         font-size: 1.5em;
     }
 
@@ -287,7 +303,7 @@ body {
 
     #modifiyTime {
         width: 50%;
-        height:30%;
+        height: 30%;
         padding: 0.8em;
         border-radius: 0.8em;
     }
@@ -301,7 +317,9 @@ body {
         font-size: 0.9em;
     }
 
-    button, .check-button, .close-button {
+    button,
+    .check-button,
+    .close-button {
         font-size: 1em;
     }
 
@@ -309,30 +327,33 @@ body {
         gap: 0.8em;
     }
 
-    .type-of-time{
+    .type-of-time {
         width: 50%;
     }
 
-    .type-of-time, p{
+    .type-of-time,
+    p {
         display: inline;
         font-size: 0.8em;
         padding: 1.25em;
-    } 
-
-    label{
-        font-size:0.7em;
     }
 
-    .settings-button{
+    label {
+        font-size: 0.7em;
+    }
+
+    .settings-button {
         position: absolute;
-        top:7.57em;
-        left:0.5em;
+        top: 7.57em;
+        left: 0.5em;
     }
 }
 
 /* -------- Très petits écrans (≤ 350px) -------- */
 @media screen and (max-width: 350px) {
-    .title , h2{
+
+    .title,
+    h2 {
         font-size: 0.8em;
     }
 
@@ -352,7 +373,7 @@ body {
 
     #modifiyTime {
         width: 50%;
-        height:30%;
+        height: 30%;
         padding: 0.8em;
         border-radius: 0.8em;
     }
@@ -366,7 +387,9 @@ body {
         font-size: 0.9em;
     }
 
-    button, .check-button, .close-button {
+    button,
+    .check-button,
+    .close-button {
         font-size: 0.9em;
     }
 
@@ -374,23 +397,37 @@ body {
         gap: 0.8em;
     }
 
-    .type-of-time{
+    .type-of-time {
         width: 40%;
     }
 
-    .type-of-time, p{
+    .type-of-time,
+    p {
         display: inline;
         font-size: 0.5em;
         padding: 1.25em;
-    } 
-
-    label{
-        font-size:0.7em;
     }
 
-    .settings-button{
+    label {
+        font-size: 0.7em;
+    }
+
+    .settings-button {
         position: absolute;
-        top:7.57em;
-        left:0.5em;
+        top: 7.57em;
+        left: 0.5em;
     }
-} 
+
+
+    .close-button {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+
+    .check-button {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+    }
+}
