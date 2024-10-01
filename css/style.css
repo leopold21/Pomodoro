@@ -120,7 +120,7 @@ body {
     text-align: center;
     border-radius: 1em;
     box-shadow: 0 0 1em rgb(0, 0, 0);
-    width: 20%;
+    width: 30%;
     margin-bottom: 2em;
 }
 
@@ -140,6 +140,11 @@ body {
 .formSection{
     display: block;
     background: lightgray;
+}
+
+
+.workingTime{
+    margin-bottom: 1em;
 }
 
 
@@ -166,7 +171,7 @@ body {
 }
 
 .formSection {
-    display: block;
+    /*display: block;*/
     background: none; /* Enlever la couleur pleine, on la gère dans #modifiyTime */
 }
 
@@ -195,13 +200,11 @@ body {
 
 
 
-/* Pour les écrans de taille moyenne (tablettes) */
-@media screen and (max-width: 768px) {
-
-    .time {
-        font-size: 2.5em;
+/* -------- Tablettes (481px - 805px) -------- */
+@media screen and (max-width: 805px) {
+    .title , h2{
+        font-size: 2em;
     }
-
 
     .big-circle {
         width: 16em;
@@ -212,27 +215,60 @@ body {
         width: 14em;
         height: 14em;
     }
-}
-
-/* Pour les petits écrans (téléphones) */
-@media screen and (max-width: 425px) {
-
-    body{
-        margin:0;
-        padding:0;
-    }
-
-    .title{
-        font-size: 1.25em;
-    }
-
-    .type-of-time > p{
-        padding: 0;
-        font-size: 0.46em;
-    }
 
     .time {
-        font-size: 2em;
+        font-size: 2.5em;
+    }
+
+    #modifiyTime {
+        width: 75%;
+        height:30%;
+        padding: 1.5em;
+        border-radius: 1.5em;
+    }
+
+    .formSection {
+        padding: 0.5em;
+    }
+
+    input[type="text"] {
+        width: 50%;
+        font-size: 0.9em;
+    }
+
+    button, .check-button, .close-button {
+        font-size: 1.5em;
+    }
+
+    .icon-container {
+        gap: 0.8em;
+    }
+
+    .type-of-time{
+        width: 50%;
+    }
+
+    .type-of-time, p{
+        display: inline;
+        font-size: 1em;
+        padding: 1.25em;
+    } 
+
+    label{
+        font-size:0.7em;
+    }
+
+    .settings-button{
+        position: absolute;
+        top:7.57em;
+        left:0.5em;
+    }
+}
+
+/* -------- Petits Écrans (351px - 480px) -------- */
+@media screen and (max-width: 480px) {
+    .title , h2{
+        font-size: 1.5em;
     }
 
     .big-circle {
@@ -244,5 +280,117 @@ body {
         width: 10em;
         height: 10em;
     }
+
+    .time {
+        font-size: 2em;
+    }
+
+    #modifiyTime {
+        width: 50%;
+        height:30%;
+        padding: 0.8em;
+        border-radius: 0.8em;
+    }
+
+    .formSection {
+        padding: 0.5em;
+    }
+
+    input[type="text"] {
+        width: 50%;
+        font-size: 0.9em;
+    }
+
+    button, .check-button, .close-button {
+        font-size: 1em;
+    }
+
+    .icon-container {
+        gap: 0.8em;
+    }
+
+    .type-of-time{
+        width: 50%;
+    }
+
+    .type-of-time, p{
+        display: inline;
+        font-size: 0.8em;
+        padding: 1.25em;
+    } 
+
+    label{
+        font-size:0.7em;
+    }
+
+    .settings-button{
+        position: absolute;
+        top:7.57em;
+        left:0.5em;
+    }
 }
 
+/* -------- Très petits écrans (≤ 350px) -------- */
+@media screen and (max-width: 350px) {
+    .title , h2{
+        font-size: 0.8em;
+    }
+
+    .big-circle {
+        width: 10em;
+        height: 10em;
+    }
+
+    .little-circle {
+        width: 8em;
+        height: 8em;
+    }
+
+    .time {
+        font-size: 1.5em;
+    }
+
+    #modifiyTime {
+        width: 50%;
+        height:30%;
+        padding: 0.8em;
+        border-radius: 0.8em;
+    }
+
+    .formSection {
+        padding: 0.5em;
+    }
+
+    input[type="text"] {
+        width: 50%;
+        font-size: 0.9em;
+    }
+
+    button, .check-button, .close-button {
+        font-size: 0.9em;
+    }
+
+    .icon-container {
+        gap: 0.8em;
+    }
+
+    .type-of-time{
+        width: 40%;
+    }
+
+    .type-of-time, p{
+        display: inline;
+        font-size: 0.5em;
+        padding: 1.25em;
+    } 
+
+    label{
+        font-size:0.7em;
+    }
+
+    .settings-button{
+        position: absolute;
+        top:7.57em;
+        left:0.5em;
+    }
+} 
