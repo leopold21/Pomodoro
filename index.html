@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="style.css">
 
     <script defer src="script.js"></script>
@@ -11,78 +12,71 @@
     <script src="https://kit.fontawesome.com/40622e83b7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <title>Pomodoro timer</title>
 </head>
-<body>
-    <h1 class="title text-font">TIMER POMODORO</h1>
 
-    <div class="type-of-time text-font">
-        <p id="working" class="working">Travail</p>
-        <p>|</p>
-        <p id="rest" class="working">Pause</p>
+<body>
+    <div>
+
+        <h1 class="title">TIMER POMODORO</h1>
+
+        <i class="fa-solid fa-gear settings-button fa-2xl" onclick="modifiyTime()"> </i>
     </div>
 
-        <i class="fa-solid fa-gear" onclick="modifiyTime()" > </i>
-        <div id="modifiyTime">
-            <div class="herder">
-                <h2> temps </h2>
-            </div>
-            <section class="formSection">
-                
-                <form id="form" class="form">
-                    <div class="workingTime">
-                        <label>temps de travail:</label> 
-                        <input type="text" id="workMinute">
-                        <p>minute(s)</p>
-                        <input type="text" id="workSecond">
-                        <p>seconde(s)</p>
-                    </div>
-                    <div class="breakTime">
-                        <label>temps de repos:</label> 
-                        <input type="text" id="breakMinute">
-                        <p>minute(s)</p>
-                        <input type="text" id="breakSecond">
-                        <p>seconde(s)</p>
-                    </div>   
-                    <div>
-                        <label> Nombre(s) de répétition</label>
-                        <input type="text" id="repetion">   
-                    </div>  
-                    <button type = "button" onclick="validateTime()"> Valider </button>
-                </form>
-            </section>
+    <div class="type-of-time">
+        <p id="working" class="time-text">Travail</p>
+        <p>|</p>
+        <p id="rest">Pause</p>
+    </div>
+    <div id="modifiyTime">
+        <div class="header">
+            <i id="boolClose" class="fa-solid close-button fa-arrow-right-from-bracket fa-xl"
+                onclick="quitSettings()"></i>
+            <h2>Paramètre</h2>
         </div>
+        <section class="formSection">
+            <form id="form" class="form">
+                <div class="workingTime">
+                    <label>Temps de travail:</label>
+                    <input type="text" id="workMinute" placeholder="Minutes" required>
+                    <p>minute(s)</p>
+                    <span class="error-message" id="workMinuteError"></span> <!-- Message d'erreur -->
+                </div>
+                <div class="breakTime">
+                    <label>Temps de repos:</label>
+                    <input type="text" id="breakMinute" placeholder="Minutes" required>
+                    <p>minute(s)</p>
+                    <span class="error-message" id="breakMinuteError"></span> <!-- Message d'erreur -->
+                </div>
 
-        <div class="image-center">
+                <i id="submitbtn" class="fa-regular fa-square-check check-button fa-2xl" onclick="validateTime()" type="submit"></i>
+                <!--<input id="submitbtn" onsubmit="validateTime()" type="submit"/>-->
+            </form>
+        </section>
+    </div>
 
-            <div class="big-circle">
-                <div class="little-circle">
-                    <div class="time">
-                        <div class="" id="timerInProgress"></div>
-                    </div>
+
+
+    <div class="image-center">
+
+        <div class="big-circle">
+            <div class="little-circle">
+                <div class="time">
+                    <div class="" id="timerInProgress"></div>
                 </div>
             </div>
-    
         </div>
-        
-    
-        
-        <div class="icon-container button">
 
-            <span id="boolRun" class="fa-stack small play-button"  onclick="run()">
-                <i class="fa-regular fa-circle fa-stack-2x red-circle "></i>
-                <i class="fa-solid fa-play start-logo fa-l fa-stack-1x" ></i>
-            </span>
-    
-            <i id="boolPause" class="fa-solid fa-pause pause-button fa-2xl" onclick="stop()"></i>
-            <i id="boolStop" class="fa-solid fa-stop stop-button fa-2xl" onclick="reset()"></i>
-        </div>
-    
-    
-    <!--<button onclick="run()"> Lancer </button>
-    <button onclick="stop()"> Pause </button>
-    <button onclick="reset()"> Reinitialiser </button> -->
-    
-    
+    </div>
+
+
+
+    <div class="icon-container button">
+        <i id="boolRun" class="fa-regular fa-circle-play play-button fa-xl"></i>
+
+        <i id="boolStop" class="fa-solid fa-stop stop-button fa-2xl" onclick="reset()"></i>
+    </div>
+
 </body>

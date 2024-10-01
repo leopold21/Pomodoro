@@ -7,28 +7,23 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-}
-
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal
+}/*
 .text-font{
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
     font-style: normal
 }
+*/
 
 .play-button,
 .stop-button,
+.close-button,
 .pause-button {
     vertical-align: top;
 }
-
-.fa-stack.small {
-    font-size: 0.85em;
-}
-
-.start-logo {
-    padding-left: 0.08em;
-}
-
 
 #timer {
     font-size: 2em;
@@ -44,19 +39,41 @@ body {
     /*border-radius: 50em;*/
 }
 
+.close-button {
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+}
+
+.check-button {
+    position: absolute;
+    bottom: 1.25em;
+    left: 1em;
+}
 
 .play-button,
 .pause-button,
-.stop-button{
+.stop-button,
+.close-button,
+.settings-button,
+.check-button{
     cursor: pointer;
     transition: transform 0.2s;
 }
 
 .play-button:hover,
 .pause-button:hover,
-.stop-button:hover{
+.stop-button:hover,
+.close-button:hover,
+.settings-button:hover,
+.check-button:hover{
     transform: scale(1.1);
     /*Effet d'agrandissement au survol (optionnel) */
+}
+
+.check-button:hover,
+.close-button:hover{
+    color: white;
 }
 
 
@@ -64,33 +81,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*
-    text-align: center;
-    position: relative;
-    */
     height: 30em;
     width: 30em;
     background-color: rgba(199, 1, 26, 255);
     border-radius: 50%;
-    /*
-    border: 0.25em solid;
-    border-color: black;
-    */
     box-shadow: 0 0em 1em rgb(0, 0, 0);
 }
-
-/*
-.big-circle::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 25%;
-    height: 25%;
-    background-color: black;
-    transform: translate(-50%);
-}
-*/
 
 .little-circle {
     display: flex;
@@ -107,7 +103,6 @@ body {
 
 .time {
     font-size: 4em;
-    
     text-align: center;
 }
 
@@ -122,8 +117,6 @@ body {
     margin: 1.5em;
 }
 
-
-
 .type-of-time{
     text-align: center;
     border-radius: 1em;
@@ -132,70 +125,86 @@ body {
     margin-bottom: 2em;
 }
 
-
-
 .type-of-time, p{
     display: inline;
     font-size: 1em;
     padding: 1.25em;
-}
+} 
 
-.working, 
-.rest{
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.working:hover,
-.rest:hover{
-    transform: scale(5.1);
-}
-
-.time-texte{
+.time-text{
     color: rgba(200,232,181,255);
 }
-
-
-/*<ol class="list">
-            <li>Travail</li>
-            <li>Pause</li>
-        </ol>*/
-
-/*
-.type-of-time,
-ol {
-    list-style-type: none;
-}
-
-.type-of-time,
-li {
-    display: inline;
-    font-size: 1.25em;
-    padding-left: 1em;
-}
-
-.list {
-    border: 0.1em solid;
-    border-collapse: collapse;
-}*/
 
 .image-center {
     margin: 2em;
 }
-
-.workingTime {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.breakTime {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .formSection{
     display: block;
     background: lightgray;
+}
+
+
+#modifiyTime {
+    width: 35%;
+    height: 20%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    border-radius: 2em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    /*background-color: rgba(255, 255, 255, 0.452); /* Couleur normale du fond */
+    background-color: rgba(199, 1, 26, 100 ); /* Couleur normale du fond */
+    color: black; /* Couleur normale du texte */
+}
+
+.breakTime,
+.restTime{
+    display: inline;
+    align-items: center;
+}
+
+.formSection {
+    display: block;
+    background: none; /* Enlever la couleur pleine, on la gère dans #modifiyTime */
+}
+
+#modifiyTime h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+body {
+    position: relative; /* Nécessaire pour que #modifiyTime se superpose correctement */
+}
+
+/* Si on veut que l'interaction avec le timer soit bloquée quand le formulaire est ouvert, on pourrait ajouter ceci :
+#timer-container {
+    pointer-events: none;
+    opacity: 0.5;
+}
+*/
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none; /* Cacher le message d'erreur par défaut */
+    margin-top: 0.5em;
+}
+
+/*
+.form{
+    width: 50em;
+}
+*/
+
+@media screen and (min-width: 320px) and (max-width: 425px){
+    
+    .title{
+        color: black;
+        font-size: 0.5em;
+    }
+
 }

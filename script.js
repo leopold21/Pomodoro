@@ -1,16 +1,29 @@
-let timeInitialInProgress = 12
-let timeInProgress = timeInitialInProgress
+let timeLocalStorage = localStorage.getItem("timeInitialProgress")
 
-let breakTimeInitial = 6
+if(timeLocalStorage == null){
+    timeLocalStorage = 25*60
+}
+
+let timeInProgress = timeLocalStorage
+
+let breakTimeInitial = 5*60
 let breakTime = breakTimeInitial
 
 let setting = document.getElementById("modifiyTime")
 setting.style.display = "none"
 
-let interval
+let interval = null
 const timerInProgressElement = document.getElementById("timerInProgress")
 
-displayTime(setMinutes(timeInitialInProgress), setSeconds(timeInitialInProgress)) // On initialise l'affichage avec des valeurs de départ (minutes, seconds)
+let working = false
+let resting = false
+
+document.getElementById("boolRun").addEventListener("click", ()=>{
+    if(interval != null) stop()
+    else run()
+})
+
+displayTime(setMinutes(timeLocalStorage), setSeconds(timeLocalStorage)) // On initialise l'affichage avec des valeurs de départ (minutes, seconds)
 
 // Fonction pour calculer les minutes restantes
 function setMinutes(timeInProgress) {
@@ -33,45 +46,90 @@ function displayTime(minutes, seconds) {
 
 // Fonction pour décrémenter le temps
 function decreaseTime(timeInProgress) {
+    let elementTextWork = document.getElementById("working")
+    let elementTextRest = document.getElementById("rest") 
     let minutes = setMinutes(timeInProgress)
     let seconds = setSeconds(timeInProgress)
 
-    if (timeInProgress <= 0) {
+    if (timeInProgress <= 0 && resting == true){
+        console.log("passe en travail")
         minutes = 0;
         seconds = 0;
-        clearInterval(interval)
+        timeInProgress = timeLocalStorage
+        resting = false
+        elementTextRest.classList.toggle("time-text")
+        elementTextWork.classList.toggle("time-text")
     }
-
+    if (timeInProgress <= 0 && resting == false) {
+        console.log("passe en pause")
+        minutes = 0;
+        seconds = 0;
+        timeInProgress = breakTimeInitial
+        resting = true
+        elementTextWork.classList.toggle("time-text")
+        elementTextRest.classList.toggle("time-text")
+    }
     displayTime(minutes, seconds)
     timeInProgress--
     return timeInProgress
 }
+/*
+document.getElementById("boolRun").addEventListener("click", ()=>{
+    run()
+})
+*/
 
 // Fonction pour démarrer le timer
 function run() {
+    working = true
+    let runElement = document.getElementById("boolRun")
+
     if (timeInProgress >= 0) {
        
         interval = setInterval(() => {
             timeInProgress = decreaseTime(timeInProgress)
-        }, 1000) // Mise à jour chaque seconde
+        }, 1) // Mise à jour chaque seconde
+        working = true
     }
+    runElement.classList.remove("fa-circle-play", "fa-xl", "play-button")
+    runElement.onclick = ""
+
+    runElement.classList.add("fa-solid", "fa-pause", "fa-2xl", "pause-button")
+
 }
+
  
 
 // Fonction pour arrêter le timer
 function stop() {
+    let runElement = document.getElementById("boolRun")
     clearInterval(interval)
+    interval=null
+    runElement.classList.remove("fa-solid", "fa-pause", "fa-2xl", "pause-button")
+
+    runElement.classList.add("fa-circle-play", "fa-xl", "play-button")
+
+    /*runElement.addEventListener("click", ()=>{
+        run();
+    })*/
 } 
 
 
 
 // Fonction pour réinitialiser le timer
 function reset() {
-    timeInProgress = timeInitialInProgress
+    let elementTextWork = document.getElementById("working")
+    let elementTextRest = document.getElementById("rest") 
+    timeInProgress = timeLocalStorage
     clearInterval(interval)
+    interval=null
     let minutes = setMinutes(timeInProgress)
     let seconds = setSeconds(timeInProgress)
     displayTime(minutes, seconds)
+    if(resting == true){
+        elementTextWork.classList.add("time-text")
+        elementTextRest.classList.remove("time-text")
+    }
 }
 
 // Fonction pour afficher ou masquer la section de modification de temps
@@ -82,19 +140,29 @@ function modifiyTime() {
 // Fonction pour valider les nouveaux temps de travail et de pause
 function validateTime() {
     let workMinuteElement = parseInt(document.getElementById("workMinute").value)
-    let workSecondElement = parseInt(document.getElementById("workSecond").value)
     let breakMinuteElement = parseInt(document.getElementById("breakMinute").value)
-    let breakSecondElement = parseInt(document.getElementById("breakSecond").value)
 
-    timeInitialInProgress = workMinuteElement * 60 + workSecondElement;
-    timeInProgress = timeInitialInProgress;
+    timeLocalStorage = workMinuteElement * 60
+    timeInProgress = timeLocalStorage
 
-    breakTimeInitial = breakMinuteElement * 60 + breakSecondElement;
-    breakTime = breakTimeInitial;
+    breakTimeInitial = breakMinuteElement * 60
+    breakTime = breakTimeInitial
+
+    localStorage.setItem("timeInitialProgress", timeLocalStorage)
 
     let minutesInProgress = setMinutes(timeInProgress)
     let secondsInProgress = setSeconds(timeInProgress)
     console.log(minutesInProgress + " : " + secondsInProgress)
     displayTime(minutesInProgress, secondsInProgress)
     setting.style.display = "none"
+}
+
+// Fonction pour quitter la page de paramètre
+function quitSettings(){
+    if(setting.style.display === "block"){
+        setting.style.display = "none"
+    }else{
+        setting.style.display = "block"
+    }
+    // setting.style.display = (setting.style.display === "none") ? "block" : "none"
 }
