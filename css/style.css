@@ -258,7 +258,7 @@ body {
     }
 
     .type-of-time {
-        width: 50%;
+        width: 40%;
     }
 
     .type-of-time,
@@ -303,7 +303,7 @@ body {
 
     #modifiyTime {
         width: 50%;
-        height: 30%;
+        height: 40%;
         padding: 0.8em;
         border-radius: 0.8em;
     }
@@ -328,7 +328,7 @@ body {
     }
 
     .type-of-time {
-        width: 50%;
+        width: 40%;
     }
 
     .type-of-time,
@@ -373,7 +373,7 @@ body {
 
     #modifiyTime {
         width: 50%;
-        height: 35%;
+        height: 30%;
         padding: 0.8em;
         border-radius: 0.8em;
     }
