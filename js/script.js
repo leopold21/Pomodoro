@@ -89,7 +89,7 @@ function run() {
        
         interval = setInterval(() => {
             timeInProgress = decreaseTime(timeInProgress)
-        }, 1) // Mise à jour chaque seconde
+        }, 1000) // Mise à jour chaque seconde
         working = true
     }
     runElement.classList.remove("fa-circle-play", "fa-xl", "play-button")
